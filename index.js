@@ -13,25 +13,25 @@ const fs = require('fs');
 async function whatsAsena() {
 	const conn = new WAConnection();
 	conn.logger.level = 'warn';
-	conn.version = [2, 2119, 6]
+	conn.version = [2, 2123, 8]
 
 	conn.on('connecting', async () => {
 		console.log(`${chalk.green.bold('Neotro')}${chalk.blue.bold('X')}
-${chalk.white.italic('Neotro-X QR කේතය ')}
+${chalk.white.italic('CHAMI-X QR කේතය ')}
 ${chalk.blue.italic('ℹ️  Connecting to Whatsapp... Please wait.')}`);
 	});
 
 	conn.on('open', async () => {
 		console.log(
-			chalk.green.bold('Asena QR Code: '),
-			'ASENA;;;' +
+			chalk.green.bold('Chami-x QR Code: '),
+			'CHAMIX;;;' +
 				Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString(
 					'base64'
 				)
 		);
 		await conn.sendMessage(
 			conn.user.jid,
-			'ASENA;;;' +
+			'NEUTRO;;;' +
 				Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString(
 					'base64'
 				),
